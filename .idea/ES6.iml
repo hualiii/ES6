@@ -11,5 +11,6 @@
     <orderEntry type="module" module-name="vue_shop" />
     <orderEntry type="module" module-name="vue" />
     <orderEntry type="module" module-name="react" />
+    <orderEntry type="module" module-name="node.js" />
   </component>
 </module>
