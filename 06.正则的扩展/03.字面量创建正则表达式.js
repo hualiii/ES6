@@ -1,1 +1,0 @@
-console.log(/\d+/.exec('dasf213s312adas'))

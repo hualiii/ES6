@@ -1,5 +1,0 @@
-let str = 'hello 123 world 456'
-// 正则方法
-console.log(str.match(/\d/g).join(""))
-// 普通方法
-console.log([...str].filter(a => !Number.isNaN(parseInt(a))).join(""))
