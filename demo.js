@@ -1,11 +1,9 @@
-function aclean(arr) {
-  let map = new Map();
-  for (let i = 0; i < arr.length; i++) {
-    const item = arr[i].toLowerCase().split("").sort().join("");
-    map.set(item, arr[i]);
-  }
-  return Array.from(map.values());
+function count(obj) {
+  return Object.keys(obj).length;
 }
-let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+let user = {
+  name: 'John',
+  age: 30
+};
 
-console.log(aclean(arr));
+console.log(count(user))
