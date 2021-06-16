@@ -1,24 +1,19 @@
-let list = {
-  value: 1,
-  next: {
-    value: 2,
-    next: {
-      value: 3,
-      next: {
-        value: 4,
-        next: null,
-      },
-    },
-  },
-};
-function reversePrintList(list) {
-  let result = [];
-  result.push(list.value);
-  while (list.next) {
-    list = list.next;
-    result.push(list.value);
-  }
-  result.reverse();
-  result.forEach((item) => console.log(item));
+function makeArmy() {
+    let shooters = [];
+    let i = 0;
+    while (i < 10) {
+        let type = i;
+        let shooter = function () {
+            console.log(type);
+        };
+        shooters.push(shooter);
+        i++;
+    }
+
+    return shooters;
 }
-reversePrintList(list);
+let army = makeArmy();
+
+army[0]();
+army[1]();
+army[2]();
