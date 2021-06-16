@@ -1,19 +1,21 @@
-function makeArmy() {
-    let shooters = [];
-    let i = 0;
-    while (i < 10) {
-        let type = i;
-        let shooter = function () {
-            console.log(type);
-        };
-        shooters.push(shooter);
-        i++;
+function makeCounter() {
+    counter.count = 0
+
+    function counter() {
+        return counter.count++
     }
 
-    return shooters;
+    counter.set = function (value) {
+        this.count = value
+    }
+    counter.decrease = function () {
+        counter.count--
+    }
+    return counter
 }
-let army = makeArmy();
 
-army[0]();
-army[1]();
-army[2]();
+const counter = makeCounter();
+console.log(counter())
+console.log(counter())
+counter.set(8)
+console.log(counter())
