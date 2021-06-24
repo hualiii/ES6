@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>防抖input示例</title>
+</head>
+<body>
+防抖前
+<input type="text">
+<br>
+防抖后
+<input type="text">
+<br>
+结果：
+<label></label>
+<script>
+    //防抖函数封装
+    function debounce(func, ms) {
+        let timer = undefined;
+        return function () {
+            clearTimeout(timer);
+            timer = setTimeout(() => {
+                func.apply(this, arguments);
+            }, ms);
+        }
+    }
+
+    const inputs = document.getElementsByTagName('input');
+    const label = document.getElementsByTagName('label')[0];
+
+    function getLabelText(value) {
+        label.innerText = value;
+    }
+
+    let getLabelTextDebounce = debounce(getLabelText, 1000);
+
+    inputs[0].addEventListener('input', () => {
+        getLabelText(inputs[0].value);
+    });
+    inputs[1].addEventListener('input', () => {
+        getLabelTextDebounce(inputs[1].value);
+    })
+</script>
+</body>
+</html>
