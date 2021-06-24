@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>节流</title>
+</head>
+<body>
+<button>click</button>
+</body>
+<script>
+    function throttle(func, ms) {
+        let flag = false,
+            flagThis,
+            flagArg;
+
+        function wrapper() {
+            if (flag) {
+                flagThis = this;
+                flagArg = arguments;
+                return;
+            }
+            func.apply(this, arguments);
+            flag = true;
+            setTimeout(() => {
+                flag = false;
+                if (flagArg) {
+                    func.apply(flagThis, flagArg);
+                    flagArg = null;
+                    flagThis = null;
+                }
+            }, ms)
+        }
+
+        return wrapper;
+    }
+
+    function log(name) {
+        console.log(name);
+    }
+
+    let log1000 = throttle(log, 1000);
+    document.getElementsByTagName('button')[0].addEventListener('click', () => {
+        log1000('jack');
+    })
+</script>
+</html>
