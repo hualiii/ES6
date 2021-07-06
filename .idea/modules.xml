@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../Data-structure-and-algorithm/.idea/Data-structure-and-algorithm.iml" filepath="$PROJECT_DIR$/../Data-structure-and-algorithm/.idea/Data-structure-and-algorithm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/ES6.iml" filepath="$PROJECT_DIR$/.idea/ES6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../工作/alpineV3/.idea/alpineV3.iml" filepath="$PROJECT_DIR$/../../工作/alpineV3/.idea/alpineV3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../vue/.idea/vue.iml" filepath="$PROJECT_DIR$/../vue/.idea/vue.iml" />
+    </modules>
+  </component>
+</project>
